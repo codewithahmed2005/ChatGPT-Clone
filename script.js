@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/chat';
+const API_URL = 'https://chatgpt-clone-backend-mhgw.onrender.com/api/chat';
 let messages = [];
 let isLoading = false;
 let currentChatId = Date.now();
@@ -1496,7 +1496,7 @@ function escapeHtml(text) {
 
 async function checkBackendHealth() {
     try {
-        const response = await fetch('http://localhost:5000/api/health');
+        const response = await fetch('https://chatgpt-clone-backend-mhgw.onrender.com/api/health');
         console.log(response.ok ? 'Backend connected' : 'Backend health check failed');
     } catch (e) {
         console.warn('Backend not reachable:', e.message);
@@ -1507,4 +1507,5 @@ async function checkBackendHealth() {
 setInterval(saveChat, 30000);
 
 // Save before page unload
+
 window.addEventListener('beforeunload', saveChat);
